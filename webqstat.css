@@ -1,0 +1,67 @@
+/* webqstat.css - CSS styles
+   2009-02-04 - v0.1 - kamp@ient.rwth-aachen.de
+*/
+
+body {
+   font-size: 10pt;
+   font-family: Helvetica;
+}
+
+h1 {
+   font-size: 1.5em;
+}
+h2 {
+   font-size: 1.3em;
+}
+
+table {
+   border-collapse: collapse;
+   margin: 1em 0;
+}
+
+td,th {
+   vertical-align: top;
+   padding: 2pt 5pt 1pt 5pt;
+   border: 1pt solid #bbb;
+}
+
+
+
+th {
+   /*border: 1px solid #000;*/
+   text-align: left;
+   background-color: #ddd;
+}
+
+td {
+   /*border: 1px solid #000;*/
+   background-color: #eee;
+   white-space : nowrap;
+   /*vertical-align: middle;*/
+}
+
+.progressFrame {
+   border: 1pt solid black;
+   height: .9em;
+   width: 100pt;
+   background-color: #f7f7f7;
+}
+
+.progressText {
+   height: .9em;
+   width: 100pt;
+   text-align: center;
+   font-size: .9em;
+}
+
+.progressBar {
+   background-color: #bbc;
+   height: .9em;
+}
+
+.queueDisabledOrUnavailable {
+   color: #888;
+}
+.queueDisabledOrUnavailable .progressFrame {
+   border: 1pt solid #888;
+}

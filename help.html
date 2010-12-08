@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>
+    Job Overview
+    </title>
+<link type="text/css" rel="Stylesheet" media="screen" href="webqstat.css">
+</head>
+<body>
+<h1>
+    Help
+</h1>
+
+<h2>Job states</h2>
+<dl>
+<dt>d(eletion)</dt>
+<dd>qdel has been used to initiate job deletion.</dd>
+<dt>t(ransfering)</dt>
+<dd>Job is about to be executed.</dd>
+<dt>r(unning)</dt>
+<dd>Job is executing.</dd>
+<dt>s(uspended)</dt>
+<dd>Job has been suspended via  the  qmod(1)  command.</dd>
+<dt>S(uspended)</dt>
+<dd>The queue containing the job is suspended and therefore the
+          job is also suspended.</dd>
+<dt>T(hreshold)</dt>
+<dd>At least one suspend threshold of  the
+          corresponding  queue  was  exceeded  and  the job has been suspended as a
+          consequence.</dd>
+<dt>R(estarted)</dt>
+<dd>The job was restarted. This can be caused by  a
+          job  migration  or  because of one of the reasons described in the -r section of the qsub(1) command.</dd>
+<dt>w(aiting)</dt>
+<dd>Job is pending and waiting to be executed.</dd>
+<dt>h(old)</dt>
+<dd>The job is currently not eligible for execution due to a hold state assigned to it via qhold(1), qalter(1) or the qsub(1) -h option or  the job is waiting for completion of the  jobs  to  which
+          job  dependencies  have  been  assigned  to  the job via the -hold_jid or -hold_jid-ad options of
+          qsub(1) or qalter(1).</dd>
+<dt>E(rror)</dt>
+<dd>The pending job couldn’t be started due to  job  properties.  The
+          reason for the job error is shown by the qstat(1) -j job_list option.</dd>
+</dl>
+
+
+<h2>Queue states</h2>
+<dl>
+<dt>a(larm)</dt>
+<dd>At least one of the load thresholds defined in the load_thresholds list of
+       the queue configuration (see queue_conf(5)) is currently exceeded, which  prevents  from  scheduling
+       further jobs to that queue.</dd>
+<dt>A(larm)</dt>
+<dd>At least one of the suspend thresholds of the
+       queue (see queue_conf(5)) is currently exceeded. This will result in  jobs  running  in  that  queue
+       being successively suspended until no threshold is violated.</dd>
+<dt>s(uspended)</dt>
+<dd>The queue has been suspended via the qmod(1) command or qmon. This results in the suspension of all jobs executing in that queue</dd>
+<dt>d(isabled)</dt>
+<dd>The queue has been disabled via the qmod(1) command or qmon. No further jobs will be scheduled on that queue. Executing jobs continue running.</dd>
+<dt>D(isabled)</dt>
+<dd>The queue has  been  disabled  automatically  via  the  calendar  facility of Grid Engine (see calendar_conf(5)).</dd>
+<dt>C(alendar suspended)</dt>
+<dd>The queue has  been suspended  automatically  via  the  calendar  facility of Grid Engine (see calendar_conf(5)).</dd>
+<dt>S(ubordinate)</dt>
+<dd>The queue has been suspend via subordination  to  another  queue
+       (see  queue_conf(5) for details). When suspending a queue (regardless of the cause) all jobs executing in that queue are suspended too.</dd>
+<dt>E(rror)</dt>
+<dd>ge_execd(8) on that host  was  unable  to  locate  the
+       ge_shepherd(8)  executable  on  that host in order to start a job. Please check the error logfile of
+       that ge_execd(8) for leads on how to resolve the problem. Please enable the queue afterwards via the
+       -c option of the qmod(1) command manually.</dd>
+<dt>c(onfiguration  ambiguous)</dt>
+<dd>The
+       configuration specified for this queue instance in sge_conf(5) is ambiguous. This state  is  cleared
+       when the configuration becomes unambiguous again. This state prevents further jobs from being scheduled to that queue instance. Detailed reasons  why  a  queue  instance  entered  the  c(onfiguration
+       ambiguous)  state  can  be  found  in  the  sge_qmaster(8)  messages file and are shown by the qstat
+       -explain switch. For queue instances in this state the cluster queue’s default settings are used for
+       the ambiguous attribute.</dd>
+<dt>o(rphaned)</dt>
+<dd>The queue instance is no
+       longer demanded by the current cluster queue’s configuration or the host group  configuration.   The
+       queue instance is kept because jobs which not yet finished jobs are still associated with it, and it
+       will vanish from qstat output when these jobs have finished.       This state prevents from scheduling further jobs to that queue instance.</dd>
+</dl>
+</body>
+</html>

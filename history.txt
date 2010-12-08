@@ -1,0 +1,19 @@
+2010-12-08 - v0.1.3 - steffen@earthlingsoft.net
+   - use variables for script hrefs to make file names customisable
+        
+2010-03-02 - v0.1.2 - steffen@earthlingsoft.net
+   - added queue html-links to qstatqueue
+   - queue instance alarm reasons are now incorporated (using div-titles which should be displayed as tool tips by browsers)
+   - added "queue" input string parameter for filtering output by queues
+   - job.xsl: show reasons for job error state
+   - job.xsl: show cpu utilisation in days, unit for io utilisation is GB
+   - qstat.cgi: allow owner queries containing *
+   - qstatqueue.cgi: correct expansion of queries with multiple *
+   - queue.cgi: use of explain option for getting queue instance alarm state reasons
+        
+2010-01-26 - v0.1.1 - steffen@earthlingsoft.net
+   - added "tasks" column to pending jobs table
+   - job.xsl: some lists use <element> tags replacing individual element name tags
+   - job.xsl: support for parallel environment job options
+        
+2009-02-04 - v0.1 - steffen@earthlingsoft.net
